@@ -631,304 +631,312 @@ z-index:2;
   color:#ffffff;
 }
 
-/* grandMA3 SECTION --------------------------------- */
-   :root {
-      --red:    #cc1010;
-      --white:  #ffffff;
-      --black:  #0d0d0d;
-      --gray-3: rgba(255,255,255,0.06);
-    }
- 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
- 
-    body {
-      background: var(--black);
-      font-family: 'Barlow', sans-serif;
-    }
- 
-    /* ── Hero Section ────────────────────────────────────────── */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background: #0d0d0d;
-    }
- 
-    /* Subtle radial vignette */
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 80% 70% at 50% 50%,
-                  transparent 30%, rgba(0,0,0,.55) 100%);
-      z-index: 1;
-      pointer-events: none;
-    }
- 
-    /* ── The "3" watermark ───────────────────────────────────── */
-    .bg-number {
-      position: absolute;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 900;
-      font-size: clamp(300px, 55vw, 700px);
-      line-height: 1;
-      color: rgba(255,255,255,0.065);
-      user-select: none;
-      pointer-events: none;
-      letter-spacing: -0.04em;
- 
-      /* centred, slightly right-of-centre like the original */
-      top: 50%;
-      left: 55%;
-      transform: translate(-50%, -50%);
-      z-index: 0;
- 
-      animation: fadeIn 1.4s ease forwards;
-    }
- 
-    /* ── Content ─────────────────────────────────────────────── */
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 2rem 1.5rem;
-    }
- 
-    .headline {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 900;
-      text-transform: uppercase;
-      line-height: 0.95;
-      letter-spacing: -0.01em;
-    }
- 
-    .line-1 {
-      font-size: clamp(2.8rem, 7vw, 7rem);
-      color: var(--white);
-      display: block;
-      opacity: 0;
-      transform: translateY(24px);
-      animation: slideUp .8s .3s cubic-bezier(.22,1,.36,1) forwards;
-    }
- 
-    /* Opening curly quote sits inline with first line */
-    .open-quote {
-      color: var(--white);
-    }
- 
-    .line-2 {
-      font-size: clamp(2.8rem, 7vw, 7rem);
-      color: var(--red);
-      display: block;
-      opacity: 0;
-      transform: translateY(24px);
-      animation: slideUp .8s .5s cubic-bezier(.22,1,.36,1) forwards;
-    }
- 
-    /* Closing curly quote in white, same size */
-    .close-quote {
-      color: var(--white);
-    }
- 
-    .subtitle {
-      margin-top: clamp(1rem, 2.5vw, 1.75rem);
-      font-family: 'Barlow', sans-serif;
-      font-weight: 400;
-      font-size: clamp(1rem, 2vw, 1.35rem);
-      color: rgba(255,255,255,0.82);
-      letter-spacing: 0.01em;
-      opacity: 0;
-      animation: fadeIn .9s .8s ease forwards;
-    }
- 
-    /* ── Animations ──────────────────────────────────────────── */
-    @keyframes slideUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
+/* ============================= */
+/* GRANDMA HERO SECTION */
+/* ============================= */
+.grandma-hero {
+  min-height: 80vh;
+  background: url('https://via.placeholder.com/1600x900') center/cover no-repeat;
+  background-color: #000; /* fallback */
+  position: relative;
+  padding: 60px 15px;
+}
 
-    /* ─── CSS Variables ─────────────────────────────────── */
-    :root {
-      --bg-dark:       #0a0a0a;
-      --text-body:     #d0d0d0;
-      --accent-red:    #cc1e1e;
-      --accent-red-h:  #e02222;
-      --btn-outline-h: rgba(255,255,255,0.25);
-    }
+/* DARK OVERLAY */
+.grandma-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+/* CONTENT ABOVE OVERLAY */
+.grandma-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* TITLE */
+.hero-title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+/* RED TEXT */
+.hero-title .highlight {
+  color: #ff2b2b;
+}
+
+/* QUOTES */
+.hero-title .quote {
+  color: #ccc;
+}
+
+/* SUBTITLE */
+.hero-subtitle {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  color: #ddd;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* MOBILE TWEAK */
+@media (max-width: 576px) {
+  .hero-title {
+    line-height: 1.3;
+  }
+}
  
-    /* ─── Section Wrapper ───────────────────────────────── */
-    .gma3-section {
-      position: relative;
-      background-color: var(--bg-dark);
-      overflow: hidden;
-      padding: 80px 0 60px;
-      min-height: 680px;
-      display: flex;
-      align-items: center;
-    }
- 
-    /* Dot-grid background texture */
-    .gma3-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        radial-gradient(circle, rgba(255,255,255,0.045) 1px, transparent 1px);
-      background-size: 28px 28px;
-      pointer-events: none;
-      z-index: 0;
-    }
- 
-    /* Subtle red radial on the left */
-    .gma3-section::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 55% 80% at 18% 50%,
-        rgba(180,30,30,0.07) 0%,
-        transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
- 
-    /* ─── Text Column ───────────────────────────────────── */
-    .gma3-text-col {
-      position: relative;
-      z-index: 1;
-      padding-right: 2.5rem;
-    }
- 
-    .gma3-body-text {
-      color: var(--text-body);
-      font-size: 0.92rem;
-      line-height: 1.8;
-      margin-bottom: 1.4rem;
-    }
- 
-    .gma3-body-text:last-of-type {
-      margin-bottom: 0;
-    }
- 
-    /* ─── Image Column ──────────────────────────────────── */
-    .gma3-img-col {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-    }
- 
-    .gma3-img-col img {
-      width: 100%;
-      max-width: 820px;
-      height: auto;
-      display: block;
-      transform: perspective(1200px) rotateY(-4deg) rotateX(2deg);
-      filter: drop-shadow(-20px 20px 50px rgba(0,0,0,0.9));
-      transition: transform 0.5s ease, filter 0.5s ease;
-    }
- 
-    .gma3-img-col img:hover {
-      transform: perspective(1200px) rotateY(-2deg) rotateX(1deg);
-      filter: drop-shadow(-10px 15px 40px rgba(0,0,0,0.8));
-    }
- 
-    /* Placeholder shown when no <img> is present */
-    .gma3-img-placeholder {
-      width: 100%;
-      max-width: 820px;
-      aspect-ratio: 16 / 9;
-      border: 2px dashed rgba(255,255,255,0.12);
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,0.2);
-      font-size: 0.82rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
- 
-    /* ─── Buttons ───────────────────────────────────────── */
-    .gma3-buttons {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 2.5rem;
-    }
- 
-    .btn-gma-red {
-      background-color: var(--accent-red);
-      color: #fff;
-      border: none;
-      padding: 12px 32px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      transition: background-color 0.2s ease, transform 0.15s ease;
-    }
- 
-    .btn-gma-red:hover {
-      background-color: var(--accent-red-h);
-      color: #fff;
-      transform: translateY(-1px);
-    }
- 
-    .btn-gma-outline {
-      background-color: transparent;
-      color: rgba(255,255,255,0.75);
-      border: 1px solid rgba(255,255,255,0.3);
-      padding: 12px 32px;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
-    }
- 
-    .btn-gma-outline:hover {
-      background-color: var(--btn-outline-h);
-      border-color: rgba(255,255,255,0.55);
-      color: #fff;
-    }
- 
-    /* ─── Responsive tweaks ─────────────────────────────── */
-    @media (max-width: 991.98px) {
-      .gma3-text-col {
-        padding-right: 0;
-        margin-bottom: 3rem;
-      }
-      .gma3-img-col {
-        justify-content: center;
-      }
-      .gma3-img-col img {
-        transform: none;
-      }
-    }
- 
-    @media (max-width: 575.98px) {
-      .gma3-section {
-        padding: 60px 0 50px;
-      }
-      .btn-gma-red,
-      .btn-gma-outline {
-        padding: 10px 22px;
-        font-size: 0.68rem;
-      }
-    }
+/* ============================= */
+/* GRANDMA HERO WITH CTA */
+/* ============================= */
+/* HERO SECTION */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: radial-gradient(circle at left, #111 0%, #000 60%);
+  overflow: hidden;
+  padding: 60px 0;
+}
+
+/* TEXT */
+.hero-text {
+  z-index: 2;
+}
+
+.small-desc {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  max-width: 420px;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  margin-top: 25px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+  font-size: 13px;
+  letter-spacing: 1px;
+  border-radius: 30px;
+}
+
+/* IMAGE */
+.hero-image img {
+  max-height: 500px;
+  object-fit: contain;
+}
+
+/* SUBTLE BACKGROUND GRID EFFECT */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(255,255,255,0.05) 0px,
+    rgba(255,255,255,0.05) 1px,
+    transparent 1px,
+    transparent 60px
+  );
+  opacity: 0.2;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .hero-section {
+    text-align: center;
+  }
+
+  .small-desc {
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-image img {
+    margin-top: 30px;
+    max-height: 300px;
+  }
+}
+
+/* ============================= */
+/* GRANDMA FEATURE CARDS */
+/* ============================= */
+.custom-card {
+  background: #0d0d0d;
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  overflow: hidden;
+  height: 100%;
+  transition: 0.4s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.card-inner {
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* ICON */
+.icon {
+  background: #ff3b3b;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* PREVIEW */
+.card-preview {
+  margin-top: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+.card-preview img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* CONTENT (hidden by default) */
+.card-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.4s ease;
+  color: #ccc;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* HOVER EFFECT */
+.custom-card:hover .card-content {
+  opacity: 1;
+  max-height: 300px;
+}
+
+.custom-card:hover .card-preview {
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* OPTIONAL: change + to x */
+.custom-card:hover .icon {
+  background: #ff3b3b;
+  content: "×";
+}
+
+/* MOBILE (always expanded) */
+@media (max-width: 768px) {
+  .card-content {
+    opacity: 1;
+    max-height: 300px;
+  }
+
+  .card-preview {
+    display: none;
+  }
+}
+
+.feature-dark-section {
+  min-height: 100vh;
+  background: url('your-image.jpg') center/cover no-repeat;
+  position: relative;
+  padding: 80px 0;
+}
+
+/* DARK OVERLAY */
+.feature-dark-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+/* CONTENT ABOVE OVERLAY */
+.feature-dark-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.feature-item {
+  max-width: 350px;
+}
+
+/* ICON BOX */
+.icon-box {
+  width: 50px;
+  height: 50px;
+  background: #cfcfcf;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+/* TEXT STYLE */
+.feature-item p {
+  color: #cfcfcf;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* CTA BUTTON */
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.cta-btn .arrow {
+  background: #e53935;
+  padding: 6px 10px;
+  border-radius: 50%;
+}
+
+.cta-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
 
 /* ─── Calendar ─────────────────────────────── */
 .calendar-section{
