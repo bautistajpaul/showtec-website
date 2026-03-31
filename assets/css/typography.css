@@ -1,0 +1,142 @@
+/* ========================
+   GLOBAL TYPOGRAPHY SYSTEM
+======================== */
+
+:root {
+  /* FONTS */
+  --font-heading: 'League Spartan', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* FONT SIZES */
+  --fs-h1: 52px;
+  --fs-h2: 40px;
+  --fs-h3: 30px;
+  --fs-h4: 22px;
+  --fs-body: 16px;
+  --fs-small: 14px;
+
+  /* FONT WEIGHTS */
+  --fw-bold: 700;
+  --fw-semibold: 600;
+  --fw-medium: 500;
+  --fw-regular: 400;
+
+  /* LINE HEIGHTS */
+  --lh-heading: 1.1;
+  --lh-body: 1.6;
+
+  /* SPACING */
+  --text-spacing: 10px;
+
+  /* FOR LARGER HEADER */
+  --fs-display: 80px;
+}
+
+/* ========================
+   BASE
+======================== */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: #fff; /* since you're using dark theme */
+}
+
+/* ========================
+   HEADINGS
+======================== */
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-heading);
+  margin-bottom: var(--text-spacing);
+  letter-spacing: -0.5px;
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+h4 { font-size: var(--fs-h4); }
+
+/* ========================
+   TEXT
+======================== */
+
+p {
+  margin-bottom: var(--text-spacing);
+  line-height: var(--lh-body);
+}
+
+/* ========================
+   TYPOGRAPHY ROLES (KEY!)
+======================== */
+
+/* Hero Titles */
+.text-hero {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-heading);
+}
+
+/* Section Titles */
+.text-title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+}
+
+/* Subtitles */
+.text-subtitle {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-semibold);
+}
+
+/* Body */
+.text-body {
+  font-size: var(--fs-body);
+}
+
+/* Small / Labels */
+.text-small {
+  font-size: var(--fs-small);
+}
+
+/* ========================
+   UTILITIES
+======================== */
+
+.text-heading {
+  font-family: var(--font-heading);
+}
+
+.text-body-font {
+  font-family: var(--font-body);
+}
+
+.text-bold {
+  font-weight: var(--fw-bold);
+}
+
+.text-semibold {
+  font-weight: var(--fw-semibold);
+}
+
+.text-medium {
+  font-weight: var(--fw-medium);
+}
+
+/* ========================
+   RESPONSIVE
+======================== */
+
+@media (max-width: 768px) {
+  :root {
+    --fs-h1: 34px;
+    --fs-h2: 26px;
+    --fs-h3: 20px;
+    --fs-h4: 18px;
+    --fs-body: 15px;
+    --fs-display: 42px;
+  }
+}
