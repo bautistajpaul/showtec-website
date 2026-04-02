@@ -454,6 +454,118 @@ z-index:2;
 }
 
 /* =========================================================
+   RECENT POSTS SECTION
+========================================================= */
+.recent-posts {
+  background: #000;
+  color: #fff;
+}
+
+/* GRID (equal cards) */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
+.post-card {
+  position: relative;
+  overflow: hidden;
+  background: #111;
+  height: 260px; /* equal height */
+  cursor: pointer;
+}
+
+/* IMAGE */
+.post-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* PLACEHOLDER */
+.post-card.placeholder {
+  background: #ccc;
+}
+
+/* FORCE dot to top-right */
+.post-card .record-dot {
+  position: absolute;
+  top: 10px;
+  right: 3px;
+  z-index: 3; /* above overlay */
+}
+
+/* RED BOTTOM BORDER */
+.post-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: red;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+/* OVERLAY */
+.post-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.post-overlay h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.post-overlay .date {
+  font-size: 12px;
+  color: red;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* HOVER EFFECT */
+.post-card:hover img {
+  transform: scale(1.08);
+}
+
+.post-card:hover .post-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.post-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* OPTIONAL: subtle lift */
+.post-card:hover {
+  transform: translateY(-4px);
+  transition: 0.3s;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
    RECENT POSTS (LIST / INTERACTIVE)
 ========================================================= */
 
