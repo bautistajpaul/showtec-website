@@ -484,9 +484,9 @@ z-index:2;
   color: rgba(255,255,255,0.7);
   line-height: var(--lh-body);
 
-  /* OPTIONAL: clean modern clamp */
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
