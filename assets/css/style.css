@@ -19,7 +19,7 @@ body {
 }
 
 /* VIDEO BACKGROUND */
-.reachout-bg-video {
+.bg-video {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -28,8 +28,20 @@ body {
   object-fit: cover;
   transform: translate(-50%, -50%);
   z-index: 0;
-  opacity: 0.35; /* adjust visibility */
-  pointer-events: none;
+}
+
+/* DARK OVERLAY (important for text readability) */
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65); /* adjust if needed */
+  z-index: 1;
+}
+
+/* KEEP CONTENT ABOVE VIDEO */
+.featured-brand-section .container {
+  position: relative;
+  z-index: 2;
 }
 
 /* =========================================================
@@ -359,6 +371,13 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.featured-brand-section {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  padding: 80px 0;
 }
 
 /* =========================================================
@@ -952,13 +971,18 @@ body {
 /* ============================= */
 /* GRANDMA HERO WITH CTA */
 /* ============================= */
-/* HERO SECTION */
 .hero-section {
+  position: relative;
   min-height: 60vh;
   display: flex;
   align-items: center;
   overflow: hidden;
   padding: 60px 0;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
 }
 
 /* TEXT */
@@ -1224,38 +1248,11 @@ body {
 /* TRAINING SECTION */
 /* ============================= */
 .training-section {
-  min-height: 80vh;
   position: relative;
-  background: #000;
   overflow: hidden;
+  min-height: 80vh;
   padding: 80px 0;
-}
-
-/* 🎥 VIDEO */
-.training-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 120%;
-  height: 120%;
-  object-fit: cover;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-  opacity: 0.25;
-  pointer-events: none;
-}
-
-/* overlay */
-.training-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.85),
-    rgba(0,0,0,0.95)
-  );
-  z-index: 1;
+  background: transparent;
 }
 
 /* ============================= */
