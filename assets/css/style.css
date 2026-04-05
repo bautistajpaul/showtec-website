@@ -283,7 +283,6 @@ body {
   align-items: center;
   justify-content: center;
   height: 80px;
-  padding: 0 15px;
   border-right: 1px solid #ddd;
   transition: all 0.3s ease;
 }
@@ -301,18 +300,6 @@ body {
 .brand-item:hover img {
   opacity: 1;
   transform: scale(1.05);
-}
-
-@media (max-width: 576px) {
-  .brand-item {
-    padding: 0 10px;
-  }
-}
-
-@media (min-width: 992px) {
-  .brand-item {
-    padding: 0 20px;
-  }
 }
 
 /* =========================================================
