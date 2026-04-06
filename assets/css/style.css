@@ -88,7 +88,7 @@ body {
 
 .main-title span {
   color: #9a9a9a;
-  font-weight: var(--fw-semibold);
+  font-weight: var(--fw-bold);
 }
 
 /* MOBILE POLISH */
@@ -444,8 +444,8 @@ body {
 
 /* ICON */
 .btn-icon-img {
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   object-fit: contain;
 }
 
