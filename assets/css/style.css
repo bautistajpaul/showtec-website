@@ -195,20 +195,30 @@ body {
 }
 
 /* =========================================================
-   WARRANTY RIBBON
+  RIBBON
 ========================================================= */
-.warranty-ribbon {
+.ribbon {
   background: #cc1111;
   color: #e7e7e7;
 
   font-family: var(--font-body);
   font-size: var(--fs-small);
-  font-weight: var(--fw-semibold);
+  font-weight: var(--fw-medium);
 
   text-transform: uppercase;
   letter-spacing: 1px;
 
   padding: 10px 0;
+}
+
+/* FLEX WRAPPER */
+.ribbon {
+  background: #cc1111;
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* =========================================================
