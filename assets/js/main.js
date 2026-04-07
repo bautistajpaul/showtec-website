@@ -34,3 +34,83 @@ if (link.hostname === window.location.hostname) {
       link.classList.add("active");
     }
   });
+
+
+//-------------------------TOP PRODUCTS-------------------------
+// Populating of cards using Gsheets
+
+// Conversion of GDrive links
+function convertDriveLink(url) {
+  if (!url) return "";
+
+  try {
+    let fileId = "";
+
+    if (url.includes("/file/d/")) {
+      fileId = url.split("/file/d/")[1].split("/")[0];
+    } else if (url.includes("id=")) {
+      fileId = url.split("id=")[1].split("&")[0];
+    }
+
+    if (fileId) {
+      return `https://lh3.googleusercontent.com/d/${fileId}`;
+    }
+
+    return url;
+  } catch (e) {
+    return url;
+  }
+}
+
+
+const sheetURL = "https://opensheet.elk.sh/148K--UV1_TTK-2h19iAWavnvIXypVv_Vhz1MdKp6mrg/top-products";
+
+fetch(sheetURL)
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById("products-container");
+    container.innerHTML = "";
+
+    data.forEach(product => {
+
+      const imgSrc = convertDriveLink(product.image);
+
+      console.log("ORIGINAL:", product.image);
+      console.log("CONVERTED:", imgSrc);
+
+      const card = `
+        <div class="col-lg-3 col-md-6">
+          <div class="product-card">
+
+            <div class="product-image">
+              <img src="${imgSrc}" 
+                onerror="this.onerror=null; this.src='https://via.placeholder.com/300x300?text=No+Image';" 
+                alt="">
+            </div>
+
+            <div class="product-info">
+              <p class="product-title">${product.title}</p>
+            </div>
+
+            <div class="product-actions">
+
+              <a href="${product.lazada}" target="_blank" class="btn-custom btn-secondary-custom btn-shop">
+                <img src="assets/icons/lazada-white.svg" class="btn-icon-img" alt="">
+                <span>ORDER AT LAZADA</span>
+              </a>
+
+              <a href="${product.shopee}" target="_blank" class="btn-custom btn-secondary-custom btn-shop">
+                <img src="assets/icons/shopee-white.svg" class="btn-icon-img" alt="">
+                <span>ORDER AT SHOPEE</span>
+              </a>
+
+            </div>
+
+          </div>
+        </div>
+      `;
+
+      container.innerHTML += card;
+    });
+  })
+  .catch(err => console.error(err));
