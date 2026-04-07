@@ -242,29 +242,41 @@ body {
 /* =========================================================
    HERO SLIDER (CAROUSEL)
 ========================================================= */
-
 .hero-slide {
   position: relative;
+}
+
+/* BACKGROUND */
+.hero-bg {
+  position: absolute;
+  inset: 0;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  filter: brightness(0.9);
+  transform: scale(1.1);
 }
 
-.hero-content {
-  min-height: 80vh;
-}
-
-/* overlay */
+/* OVERLAY */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0,0,0,0.4);
 }
 
-/* keep content above overlay */
-.hero-slide .container {
+/* CONTENT */
+.hero-content {
+  min-height: 80vh;
   position: relative;
   z-index: 2;
+}
+
+/* IMAGE */
+.hero-img {
+  max-width: 100%;
+  max-height: 70vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 /* TYPOGRAPHY */
@@ -275,7 +287,6 @@ body {
 }
 
 .hero-title span {
-  font-weight: var(--fw-bold);
   color: #E12326;
 }
 
@@ -284,15 +295,79 @@ body {
   line-height: var(--lh-body);
   color: #ccc;
   max-width: 500px;
-  margin: 16px 0 24px;
+  margin: 16px auto 24px;
 }
 
-/* BUTTON GROUP */
-
+/* BUTTONS */
 .hero-buttons {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* DESKTOP FIX */
+@media (min-width: 992px) {
+  .hero-buttons {
+    justify-content: flex-start;
+  }
+
+  .hero-subtext {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* MOBILE FIX (🔥 IMPORTANT FIX FOR YOUR ISSUE) */
+@media (max-width: 991px) {
+  .hero-content {
+    min-height: auto;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    text-align: center;
+  }
+
+  .hero-img {
+    margin-top: 30px;
+  }
+}
+
+/* TYPOGRAPHY */
+.hero-title {
+  font-size: var(--fs-display);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-heading);
+}
+
+.hero-title span {
+  color: #E12326;
+}
+
+.hero-subtext {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: #ccc;
+  max-width: 500px;
+  margin: 16px auto 24px;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (min-width: 992px) {
+  .hero-buttons {
+    justify-content: flex-start;
+  }
+
+  .hero-subtext {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 /* =========================================================

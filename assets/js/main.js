@@ -1,6 +1,6 @@
 console.log('Showtec site loaded');
 
-//--------PAGE TRANSITION
+//-------------------------PAGE TRANSITION-------------------------
 // Fade IN when page loads
 window.addEventListener("load", () => {
 document.body.classList.add("loaded");
