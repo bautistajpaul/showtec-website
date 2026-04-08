@@ -122,3 +122,60 @@ fetch(sheetURL)
     });
   })
   .catch(err => console.error(err));
+
+//--------------------------------------------------------------
+//-------------------------MA LIGHTNING-------------------------
+
+//-------------------------Card Section-------------------------
+function setupCardBehavior() {
+
+  const isMobile = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
+  document.querySelectorAll('.custom-card').forEach(card => {
+
+    // 🔥 remove old listeners by cloning
+    const newCard = card.cloneNode(true);
+    card.parentNode.replaceChild(newCard, card);
+
+    if (!isMobile) {
+      // DESKTOP → HOVER
+      newCard.addEventListener('mouseenter', () => {
+        newCard.classList.add('active');
+      });
+
+      newCard.addEventListener('mouseleave', () => {
+        newCard.classList.remove('active');
+      });
+
+    } else {
+      // MOBILE → CLICK
+      newCard.addEventListener('click', (e) => {
+
+        document.querySelectorAll('.custom-card').forEach(c => {
+          if (c !== newCard) c.classList.remove('active');
+        });
+
+        newCard.classList.toggle('active');
+
+        e.stopPropagation();
+      });
+    }
+  });
+
+  // OUTSIDE CLICK (mobile only)
+  if (isMobile) {
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.custom-card').forEach(card => {
+        card.classList.remove('active');
+      });
+    });
+  }
+}
+
+// 🔥 run on load
+setupCardBehavior();
+
+// 🔥 run on resize (NO REFRESH NEEDED)
+window.addEventListener('resize', () => {
+  setupCardBehavior();
+});
