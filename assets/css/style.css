@@ -18,16 +18,40 @@ body {
   object-fit: cover;
 }
 
-/* VIDEO BACKGROUND */
-.bg-video {
+/* ================= VIDEO BACKGROUND SYSTEM ================= */
+/* SECTION BASE */
+.section-video {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  overflow: hidden;
+}
+
+/* VIDEO LAYER */
+.video-wrapper {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  inset: 0;
+  z-index: 0;
+}
+
+.video-wrapper video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: translate(-50%, -50%);
-  z-index: 0;
+  object-position: center;
+}
+
+/* OVERLAY */
+.video-wrapper .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* CONTENT (always on top) */
+.section-video .content {
+  position: relative;
+  z-index: 2;
 }
 
 /* PAGE TRANSITION */
@@ -453,8 +477,25 @@ iframe {
 
 /* LEFT CONTENT */
 .featured-brand-content {
+  position: relative;
   padding: 40px;
   border-right: 1px solid #d9d9d9;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.featured-brand-content::before {
+  content: "";
+  position: absolute;
+
+  /* THIS CREATES "PADDING" FOR THE BACKGROUND */
+  inset: 40px; /* adjust spacing from edges */
+
+  background: url('/assets/images/background/ma-3.svg') no-repeat center center;
+  background-size: contain;
+
+  opacity: 0.5;
+  z-index: -1;
 }
 
 .brand-title {
