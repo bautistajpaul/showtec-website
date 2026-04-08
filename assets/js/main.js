@@ -8,18 +8,25 @@ document.body.classList.add("loaded");
 
 // Fade OUT when clicking links
 document.querySelectorAll("a").forEach(link => {
-if (link.hostname === window.location.hostname) {
-    link.addEventListener("click", function(e) {
-    e.preventDefault();
-    const href = this.href;
+  const href = link.getAttribute("href");
 
-    document.body.classList.remove("loaded");
+  // Skip empty, anchors, or JS-trigger links
+  if (!href || href.startsWith("#") || link.hasAttribute("data-bs-toggle")) {
+    return;
+  }
 
-    setTimeout(() => {
-        window.location = href;
-    }, 300); // match CSS duration
+  // Only internal links
+  if (link.hostname === window.location.hostname) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      document.body.classList.remove("loaded");
+
+      setTimeout(() => {
+        window.location.href = this.href;
+      }, 300);
     });
-}
+  }
 });
 
 //-------------------------NAV BAR-------------------------
