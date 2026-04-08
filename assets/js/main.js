@@ -172,10 +172,10 @@ function setupCardBehavior() {
   }
 }
 
-// 🔥 run on load
+//run on load
 setupCardBehavior();
 
-// 🔥 run on resize (NO REFRESH NEEDED)
+//run on resize (NO REFRESH NEEDED)
 window.addEventListener('resize', () => {
   setupCardBehavior();
 });
