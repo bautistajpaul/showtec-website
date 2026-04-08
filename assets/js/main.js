@@ -62,7 +62,8 @@ function convertDriveLink(url) {
   }
 }
 
-
+// Google sheets URL
+// Replace it if new sheets are available
 const sheetURL = "https://opensheet.elk.sh/148K--UV1_TTK-2h19iAWavnvIXypVv_Vhz1MdKp6mrg/top-products";
 
 fetch(sheetURL)
