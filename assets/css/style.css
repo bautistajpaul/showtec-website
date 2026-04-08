@@ -46,7 +46,7 @@ body {
 .bg-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.65); /* adjust if needed */
+  background: rgba(0, 0, 0, 0.4); /* adjust if needed */
   z-index: 1;
 }
 
@@ -210,11 +210,6 @@ iframe {
   border-radius: 50%;
   display: inline-block;
   animation: recordPulse 1.5s infinite;
-}
-
-/* OPTIONAL HOVER EFFECT */
-.nav-link:hover {
-  color: #ff0000 !important;
 }
 
 /* PULSE ANIMATION */
@@ -1365,6 +1360,14 @@ iframe {
 .calendar-wrapper {
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.calendar-section .main-title span {
+  color: #8f9192;
+}
+
+.calendar-section p {
+  color: #8f9192;
 }
 
 /* ============================= */
