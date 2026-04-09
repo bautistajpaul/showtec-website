@@ -444,6 +444,7 @@ iframe {
   display: flex;
   align-items: stretch;
   border: 1px solid #d9d9d9;
+  overflow: hidden;
 }
 
 /* LEFT CONTENT */
@@ -501,6 +502,10 @@ iframe {
   height: 500px;
 }
 
+.carousel-item {
+  overflow: hidden; /* prevents overflow */
+}
+
 .carousel-inner,
 .carousel-item {
   height: 100%;
@@ -509,7 +514,14 @@ iframe {
 .carousel-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+}
+
+.featured-brand-section .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #000;
 }
 
 /* OPTIONAL: RESPONSIVE HEIGHT */
@@ -669,7 +681,7 @@ iframe {
 }
 
 /* =========================================================
-  RECENT POSTS SECTION
+  EQUIPMENT SHOWCASE
 ========================================================= */
 .recent-posts {
   background: #000;
