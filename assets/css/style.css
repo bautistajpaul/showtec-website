@@ -2,15 +2,19 @@
    GLOBAL STYLES
    Base typography and reusable defaults
 ========================================================= */
-body {
-  margin: 0;
-  padding: 0;
-}
-
 .hero-section {
-  min-height: 70vh;
+  position: relative;
+  min-height: 60vh;
   display: flex;
   align-items: center;
+  overflow: hidden;
+  padding: 60px 0;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    text-align: center;
+  }
 }
 
 .card img {
@@ -82,6 +86,21 @@ body {
 
 iframe {
   width: 100%;
+}
+
+/* TYPOGRAPHY */
+.hero-title {
+  font-size: var(--fs-display);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-heading);
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    line-height: 1.2;
+  }
 }
 
 /* =========================================================
@@ -258,20 +277,6 @@ iframe {
 /* =========================================================
   RIBBON
 ========================================================= */
-.ribbon {
-  background: #cc1111;
-  color: #e7e7e7;
-
-  font-family: var(--font-body);
-  font-size: var(--fs-small);
-  font-weight: var(--fw-medium);
-
-  text-transform: uppercase;
-  letter-spacing: 1px;
-
-  padding: 10px 0;
-}
-
 /* FLEX WRAPPER */
 .ribbon {
   background: #cc1111;
@@ -322,13 +327,6 @@ iframe {
   object-fit: contain;
 }
 
-/* TYPOGRAPHY */
-.hero-title {
-  font-size: var(--fs-display);
-  font-weight: var(--fw-bold);
-  line-height: var(--lh-heading);
-}
-
 .hero-title span {
   color: #e12326;
 }
@@ -339,26 +337,6 @@ iframe {
   color: #ccc;
   max-width: 500px;
   margin: 16px auto 24px;
-}
-
-/* BUTTONS */
-.hero-buttons {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* DESKTOP FIX */
-@media (min-width: 992px) {
-  .hero-buttons {
-    justify-content: flex-start;
-  }
-
-  .hero-subtext {
-    margin-left: 0;
-    margin-right: 0;
-  }
 }
 
 /* MOBILE FIX (🔥 IMPORTANT FIX FOR YOUR ISSUE) */
@@ -373,13 +351,6 @@ iframe {
   .hero-img {
     margin-top: 30px;
   }
-}
-
-/* TYPOGRAPHY */
-.hero-title {
-  font-size: var(--fs-display);
-  font-weight: var(--fw-bold);
-  line-height: var(--lh-heading);
 }
 
 .hero-title span {
@@ -510,14 +481,6 @@ iframe {
   line-height: var(--lh-body);
   color: #ccc;
   margin-bottom: 12px;
-}
-
-/* ACTIONS */
-.brand-actions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-top: 24px;
 }
 
 /* BRAND LOGO */
@@ -1135,14 +1098,6 @@ iframe {
   z-index: 2;
 }
 
-/* TITLE */
-.hero-title {
-  font-size: clamp(32px, 6vw, 72px);
-  font-weight: var(--fw-bold);
-  line-height: 1.1;
-  letter-spacing: -1px;
-}
-
 /* RED TEXT */
 .hero-title .highlight {
   color: #ff2b2b;
@@ -1172,15 +1127,6 @@ iframe {
 /* ============================= */
 /* GRANDMA HERO WITH CTA */
 /* ============================= */
-.hero-section {
-  position: relative;
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  padding: 60px 0;
-}
-
 .hero-section .container {
   position: relative;
   z-index: 2;
@@ -1233,10 +1179,6 @@ iframe {
 
 /* MOBILE FIX */
 @media (max-width: 768px) {
-  .hero-section {
-    text-align: center;
-  }
-
   .small-desc {
     max-width: 100%;
   }
@@ -1368,10 +1310,6 @@ iframe {
   height: 100px;
   border-radius: 6px;
   margin-bottom: 20px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* ICON IMAGE */

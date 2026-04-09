@@ -30,17 +30,29 @@ document.querySelectorAll("a").forEach(link => {
 });
 
 //-------------------------NAV BAR-------------------------
-// adding active class
-  const links = document.querySelectorAll(".nav-link");
-  const currentPage = window.location.pathname.split("/").pop();
+const links = document.querySelectorAll(".nav-link");
 
-  links.forEach(link => {
-    const linkPage = link.getAttribute("href");
+// Get current path
+let currentPath = window.location.pathname;
 
-    if (linkPage === currentPage) {
-      link.classList.add("active");
-    }
-  });
+// Normalize (remove index.html + trailing slash)
+currentPath = currentPath.replace(/index\.html$/, "").replace(/\/$/, "");
+
+links.forEach(link => {
+  let linkPath = link.getAttribute("href");
+
+  // Normalize link
+  linkPath = linkPath.replace(/index\.html$/, "").replace(/\/$/, "");
+
+  if (currentPath === linkPath) {
+    link.classList.add("active");
+  }
+
+  // Special case for homepage
+  if (currentPath === "" && linkPath === "") {
+    link.classList.add("active");
+  }
+});
 
 
 //-------------------------TOP PRODUCTS-------------------------
