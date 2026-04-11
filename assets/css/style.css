@@ -395,7 +395,6 @@ iframe {
   border-bottom: 1px solid #ddd;
 }
 
-
 .brand-item {
   display: flex;
   align-items: center;
@@ -406,9 +405,11 @@ iframe {
 }
 
 .brand-item img {
-  width: 120px;     /* fixed width */
-  height: 30px;     /* fixed height */
-  object-fit: contain; /* keeps aspect ratio */
+  width: 120px;
+  height: 30px;
+  object-fit: contain;
+  flex-shrink: 0;
+  max-width: none;
   opacity: 0.75;
   transition: 0.3s;
 }
@@ -466,7 +467,7 @@ iframe {
   /* THIS CREATES "PADDING" FOR THE BACKGROUND */
   inset: 40px; /* adjust spacing from edges */
 
-  background: url('/assets/images/background/ma-3.svg') no-repeat center center;
+  background: url("/assets/images/background/ma-3.svg") no-repeat center center;
   background-size: contain;
 
   opacity: 0.5;
@@ -1294,7 +1295,8 @@ iframe {
   padding: 80px 0;
 
   /* IMAGE BACKGROUND */
-  background: url("/assets/images/background/ma-lightning/bord-background.webp") center/cover no-repeat;
+  background: url("/assets/images/background/ma-lightning/bord-background.webp")
+    center/cover no-repeat;
 
   position: relative;
 
