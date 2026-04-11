@@ -405,7 +405,9 @@ iframe {
 }
 
 .brand-item img {
-  max-height: 30px;
+  width: 120px;     /* fixed width */
+  height: 30px;     /* fixed height */
+  object-fit: contain; /* keeps aspect ratio */
   opacity: 0.75;
   transition: 0.3s;
 }
