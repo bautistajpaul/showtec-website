@@ -83,7 +83,7 @@ function convertDriveLink(url) {
 
 // Google sheets URL
 // Replace it if new sheets are available
-const sheetURL = "https://opensheet.elk.sh/148K--UV1_TTK-2h19iAWavnvIXypVv_Vhz1MdKp6mrg/top-products";
+const sheetURL = "https://opensheet.elk.sh/1gmhWnOZhg4_p3P1dCiTvF_vrP_NnBilZqSeDqkZW7xQ/top-products";
 
 fetch(sheetURL)
   .then(res => res.json())
