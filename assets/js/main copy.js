@@ -114,10 +114,14 @@ fetch(sheetURL)
 
             <div class="product-actions">
 
-              <a 
-                href="mailto:sales@showtec.com?subject=Request%20a%20Quote%20-%20${encodeURIComponent(product.title)}" 
-                class="btn-custom btn-secondary-custom btn-shop">
-                <span>REQUEST A QUOTE</span>
+              <a href="${product.lazada}" target="_blank" class="btn-custom btn-secondary-custom btn-shop">
+                <img src="assets/icons/lazada-white.svg" class="btn-icon-img" alt="">
+                <span>ORDER AT LAZADA</span>
+              </a>
+
+              <a href="${product.shopee}" target="_blank" class="btn-custom btn-secondary-custom btn-shop">
+                <img src="assets/icons/shopee-white.svg" class="btn-icon-img" alt="">
+                <span>ORDER AT SHOPEE</span>
               </a>
 
             </div>
