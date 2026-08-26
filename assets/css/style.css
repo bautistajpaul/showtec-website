@@ -17,6 +17,30 @@
   }
 }
 
+@media (max-width: 1024px) and (orientation: portrait) {
+  .hero-section,
+  .featured-brand-section,
+  .top-products-section,
+  .recent-posts-section,
+  .why-showtec-section,
+  .reachout-section,
+  .section-video {
+    min-height: auto;
+    padding: 56px 0;
+  }
+
+  .hero-content {
+    min-height: auto;
+    padding-top: 60px;
+    padding-bottom: 24px;
+  }
+
+  .footer-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
 .card img {
   height: 200px;
   object-fit: cover;
@@ -89,12 +113,25 @@ iframe {
 }
 
 /* TYPOGRAPHY */
-.hero-title {
-  font-size: var(--fs-display);
+.hero-title,
+.main-title {
+  font-family: var(--font-heading);
   font-weight: var(--fw-bold);
   line-height: var(--lh-heading);
-  line-height: 1.1;
   letter-spacing: -1px;
+  font-size: var(--fs-display);
+}
+
+.hero-title {
+  margin-bottom: 0;
+}
+
+.hero-title span {
+  color: #e12326;
+}
+
+.main-title span {
+  color: #9a9a9a;
 }
 
 @media (max-width: 576px) {
@@ -130,12 +167,12 @@ iframe {
 .small-title .line {
   width: 50px;
   height: 2px;
-  background: #ff0000;
+  background: var(--color-accent-strong);
 }
 
 .small-title .text {
   font-family: var(--font-body);
-  color: #ff0000;
+  color: var(--color-accent-strong);
   letter-spacing: 3px;
   font-size: var(--fs-small);
   text-transform: uppercase;
@@ -143,12 +180,7 @@ iframe {
 
 /* BIG TITLE */
 .main-title {
-  font-weight: var(--fw-bold);
-  line-height: var(--lh-heading);
   margin: 0;
-
-  /* use system instead of clamp */
-  font-size: var(--fs-display);
 }
 
 .main-title span {
@@ -327,19 +359,22 @@ iframe {
   object-fit: contain;
 }
 
-.hero-title span {
-  color: #e12326;
-}
-
 .hero-subtext {
   font-size: var(--fs-body);
   line-height: var(--lh-body);
-  color: #ccc;
+  color: var(--color-text-muted);
   max-width: 500px;
   margin: 16px auto 24px;
 }
 
-/* MOBILE FIX (🔥 IMPORTANT FIX FOR YOUR ISSUE) */
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* MOBILE FIX */
 @media (max-width: 991px) {
   .hero-content {
     min-height: auto;
@@ -351,26 +386,6 @@ iframe {
   .hero-img {
     margin-top: 30px;
   }
-}
-
-.hero-title span {
-  color: #e12326;
-}
-
-.hero-subtext {
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
-  color: #ccc;
-  max-width: 500px;
-  margin: 16px auto 24px;
-}
-
-/* BUTTONS */
-.hero-buttons {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 @media (min-width: 992px) {
@@ -1123,11 +1138,10 @@ iframe {
 /* SUBTITLE */
 .hero-subtitle {
   font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-  color: #ccc;
+  color: var(--color-text-muted);
   max-width: 500px;
   margin: 16px auto 0;
 }
-
 /* MOBILE */
 @media (max-width: 576px) {
   .grandma-hero {
@@ -1155,9 +1169,8 @@ iframe {
 
 .small-desc {
   font-size: var(--fs-body);
-  line-height: var(--lh-body);
-  color: #ccc;
   line-height: 1.7;
+  color: var(--color-text-muted);
   margin-bottom: 15px;
   max-width: 420px;
 }
@@ -1165,9 +1178,6 @@ iframe {
 /* BUTTONS */
 .hero-buttons {
   margin-top: 25px;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
 }
 
 /* IMAGE */

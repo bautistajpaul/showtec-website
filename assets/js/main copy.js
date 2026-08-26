@@ -145,7 +145,7 @@ function setupCardBehavior() {
 
   document.querySelectorAll('.custom-card').forEach(card => {
 
-    // 🔥 remove old listeners by cloning
+    // remove old listeners by cloning
     const newCard = card.cloneNode(true);
     card.parentNode.replaceChild(newCard, card);
 

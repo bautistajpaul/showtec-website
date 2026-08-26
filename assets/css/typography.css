@@ -23,6 +23,12 @@
   --lh-body: 1.6;
 
   --text-spacing: 10px;
+
+  --color-accent: #cc1111;
+  --color-accent-strong: #ff0000;
+  --color-accent-alt: #ff2b2b;
+  --color-text-muted: #ccc;
+  --color-text-soft: #888;
 }
 
 /* BASE */
